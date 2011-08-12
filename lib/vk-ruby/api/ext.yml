@@ -1,0 +1,63 @@
+messages:
+	- get
+	- getDialogs
+	- search
+	- send
+	- delete
+	- restore
+	- markAsNew
+	- markAsRead
+	- getHistory
+	- getLongPollServer
+docs:
+  - get
+  - getById
+  - getUploadServer
+  - getWallUploadServer
+  - save
+wall:
+	- post
+	- delete
+	- restore
+	- getComments
+	- addComment
+	- deleteComment
+	- restoreComment
+	- addLike
+	- deleteLike
+photos:
+	- getComments
+	- getAllComments
+	- createComment
+	- editComment
+	- deleteComment
+	- restoreComment
+	- getAll
+	- getUserPhotos
+	- getTags
+	- putTag
+	- removeTag
+newsfeed:
+	- get
+	- getBanned
+	- addBan
+	- deleteBan
+status:
+	- get
+	- set
+likes:
+	- add
+	- delete
+	- getList
+	- isLiked
+friends:
+	- getLists
+polls:
+	- getById
+	- addVote
+	- deleteVote
+subscriptions:
+	- get
+	- getFollowers
+	- follow
+	- unfollow

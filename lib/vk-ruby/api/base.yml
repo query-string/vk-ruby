@@ -1,0 +1,109 @@
+- isAppUser
+- getProfiles
+- getUserBalance
+- getUserSettings
+- getGroups
+- getGroupsFull
+- getVariable 
+- getVariables
+- putVariable
+- getHighScores
+- setUserScore
+- getMessages
+- sendMessage
+- getServerTime
+- getAds
+- setNameInMenu
+- execute
+- 
+  friends:
+    - get
+    - getAppUsers
+    - getOnline
+    - getMutual
+  photos:
+    - getAlbums
+    - get
+    - getById
+    - createAlbum
+    - editAlbum
+    - edit
+    - move
+    - makeCover
+    - reorderAlbums
+    - reorderPhotos
+    - getUploadServer
+    - save
+    - getProfileUploadServer
+    - saveProfilePhoto
+    - getWallUploadServer
+    - saveWallPhoto
+  wall:
+    - get
+    - getById
+    - savePost
+    - getPhotoUploadServer
+  audio:
+    - get
+    - audio
+    - getById
+    - getLyrics
+    - getUploadServer
+    - save
+    - search
+    - add
+    - delete
+    - edit
+    - restore
+    - reorder
+  video:
+    - get
+    - edit
+    - add
+    - delete
+    - search
+    - getUserVideos
+    - getComments
+    - createComment
+    - editComment
+    - deleteComment
+    - getTags
+    - putTag
+    - removeTag
+    - save
+  notes:
+    - get
+    - getById
+    - getFriendsNotes
+    - add
+    - edit
+    - delete
+    - getComments
+    - createComment
+    - editComment
+    - deleteComment
+    - restoreComment
+  pages:
+    - get
+    - save
+    - saveAccess
+    - getVersion
+    - getHistory
+    - getTitles
+  places:
+    - add
+    - getById
+    - search
+    - checkin
+    - getCheckins
+    - getTypes
+    - getCountries
+    - getCities
+    - getCountryById
+    - getCityById
+  storage:
+    - set
+    - get
+  sms:
+    - setSMSPrefix
+    - getSMSPrefix

@@ -1,0 +1,16 @@
+- sendNotification
+- getAppBalance
+- getBalance
+- withdrawVotes
+- getTransactionsHistory
+- addRating
+- setCounter
+- getSMSHistory
+- sendSMSNotification
+- getSMS
+- setLanguageValue
+- deleteLanguageValue
+- saveAppStatus
+- getAppStatus
+- setSMSPrefix
+- getSMSPrefix
