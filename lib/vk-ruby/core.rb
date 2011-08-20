@@ -1,3 +1,5 @@
+require 'net/http/post/multipart'
+
 module VK
   module Core
     attr_accessor :debug, :logger
