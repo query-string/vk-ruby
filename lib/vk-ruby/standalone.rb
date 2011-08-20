@@ -11,10 +11,5 @@ module VK
       transform ext_api, self.method(:vk_call)
     end
 
-    def request(p={})
-      path = p[:path] + "?" + (p[:params].map{|k,v| "#{k}=#{v}" }).join('&')
-      http.get path, @header
-    end
-
   end
 end
