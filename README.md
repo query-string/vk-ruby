@@ -1,5 +1,5 @@
 #vk-ruby
-Ruby wrapper for vk.com API 
+Ruby wrapper for vk.com API [...read more ](http://suckless.ru/post/10080778911/vk-ruby "САКЛЕСС!!")
 
 ## Installation
 `gem install vk-ruby`
