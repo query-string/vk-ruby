@@ -1,6 +1,6 @@
 module VK
   module Core
-    attr_accessor :debug, :logger
+    attr_accessor :debug, :logger, :access_token
     attr_reader :app_id
 
     def authorize(code = nil)
@@ -25,7 +25,7 @@ module VK
 
     def vk_call(method_name,p)  
       params = p[0] ||= {}
-      params[:access_token] = @access_token
+      params[:access_token] ||= @access_token
       result = JSON.parse request(:path => "/method/#{method_name}", :params => params).body
       raise result['error']['error_msg'] if result['error']
       result['response']
