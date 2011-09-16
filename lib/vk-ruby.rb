@@ -4,7 +4,7 @@ require 'transformer'
 require 'json'
 require 'yaml'
 
-%w(core secure serverside standalone).each do |lib|
+%w(core secure serverside standalone vk_exception).each do |lib|
   require "vk-ruby/#{lib}"
 end
 

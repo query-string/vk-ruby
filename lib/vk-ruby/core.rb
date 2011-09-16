@@ -1,9 +1,8 @@
 module VK
   module Core
-    attr_accessor :debug, :logger, :access_token
-    attr_reader :app_id
+    attr_accessor :app_id, :access_token, :user_id, :expires_in, :debug, :logger
 
-    def authorize(code = nil)
+    def authorize(code = nil, auto_save = true)
       prms = {:client_id => @app_id, :client_secret => @app_secret}
       unless code # secure server
         prms[:grant_type] = 'client_credentials'
@@ -11,12 +10,15 @@ module VK
         prms[:code] = code
       end
 
-      result = JSON.parse(request({:path => "/oauth/access_token", :params => prms }).body)
+      result = to_json(request({:path => "/oauth/access_token", :params => prms }).body)
 
-      raise result['error'] if result['error']
-      @expires_in = result["expires_in"]      if result['expires_in']
-         @user_id = result["user_id"]         if result['user_id']
-      @access_token = result["access_token"]  if result['access_token']
+      rraise VK::VkAuthorizeException.new(result) if result['error']
+
+      if auto_save
+        @expires_in = result["expires_in"]      if result['expires_in']
+           @user_id = result["user_id"]         if result['user_id']
+        @access_token = result["access_token"]  if result['access_token']
+      end
 
       result
     end
@@ -26,14 +28,20 @@ module VK
     def vk_call(method_name,p)  
       params = p[0] ||= {}
       params[:access_token] ||= @access_token
-      result = JSON.parse request(:path => "/method/#{method_name}", :params => params).body
-      raise result['error']['error_msg'] if result['error']
+
+      result = to_json(request(:path => "/method/#{method_name}", :params => params).body)
+
+      raise VK::VkException.new(method_name,result) if result['error']
+
       result['response']
     end
 
+    def to_json(str)
+      JSON.parse str
+    end
+
     def request(p={})
-      path = p[:path] + "?" + (p[:params].map{|k,v| "#{k}=#{v}" }).join('&')
-      http.get path
+      http.get( p[:path] + "?" + (p[:params].map{|k,v| "#{k}=#{v}" }).join('&') )
     end
 
     def http(p={})

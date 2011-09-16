@@ -3,7 +3,7 @@ module VK
     include Core
     include Transformer
 
-    attr_reader :app_secret, :settings, :debug
+    attr_accessor :app_secret, :settings
 
     def initialize(p={})
       raise 'undefined application id' unless @app_id = p[:app_id] 
