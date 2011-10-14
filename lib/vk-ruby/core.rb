@@ -12,7 +12,7 @@ module VK
 
       result = to_json(request({:path => "/oauth/access_token", :params => prms }).body)
 
-      rraise VK::VkAuthorizeException.new(result) if result['error']
+      raise VK::VkAuthorizeException.new(result) if result['error']
 
       if auto_save
         @expires_in = result["expires_in"]      if result['expires_in']
