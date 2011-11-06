@@ -107,3 +107,8 @@
   sms:
     - setSMSPrefix
     - getSMSPrefix
+  groups
+    - get
+    - getById
+    - isMember
+    - getMembers
