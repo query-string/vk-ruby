@@ -52,6 +52,11 @@ likes:
   - isLiked
 friends:
   - getLists
+  - addList
+  - editList
+  - add
+  - delete
+  - getRequests
 polls:
   - getById
   - addVote
