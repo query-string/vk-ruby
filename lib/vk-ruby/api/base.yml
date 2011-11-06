@@ -2,7 +2,6 @@
 - getProfiles
 - getUserBalance
 - getUserSettings
-- getGroups
 - getGroupsFull
 - getVariable 
 - getVariables
